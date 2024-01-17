@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "start": "deno run -A --unstable main.ts",
+    "load": "deno run -A --unstable load.ts"
+  },
+  "importMap": "./import_map.json",
+  "fmt": {
+    "singleQuote": true
+  },
+  "lint": {
+    "rules": {
+      "exclude": ["no-explicit-any"]
+    }
+  }
+}

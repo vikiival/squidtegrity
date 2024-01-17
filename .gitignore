@@ -1,0 +1,8 @@
+# IDE
+.vscode
+
+
+# MISC
+col.json
+collection.json
+*.sqlite
