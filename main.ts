@@ -8,6 +8,8 @@ const db = await Deno.openKv(PATH);
 
 const file = await Deno.readTextFile(FILE).then(JSON.parse);
 
+let count = 0
+
 for (const item of file) {
   const key: Deno.KvKey = [
     ENTITY,
@@ -19,10 +21,17 @@ for (const item of file) {
   try {
     assertEquals(actual, expected)  
   } catch (error) {
+    count++;
     console.log(actual.id)
     console.log('----------------')
     console.log(error.message)
   }
+}
+
+if (count) {
+  console.log(`[TEST] ${count} tests failed`)
+} else {
+  console.log(`[TEST] All tests passed`)
 }
 
 // attibutes needs to be unhexed

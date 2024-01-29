@@ -13,3 +13,5 @@ for (const item of file) {
   ]
   await db.set(key, item)
 }
+
+console.log(`[LOAD] Loaded ${file.length} items`)
