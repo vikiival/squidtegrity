@@ -22,7 +22,7 @@ for (const item of file) {
     assertEquals(actual, expected)  
   } catch (error) {
     count++;
-    console.log(actual.id)
+    console.warn('[WARN]', actual.id)
     console.log('----------------')
     console.log(error.message)
   }
