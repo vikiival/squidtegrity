@@ -1,12 +1,14 @@
 const PATH = './db.sqlite'
 const ENTITY = 'collection'
-const FILE = 'collection.json'
-import { assertEquals } from "assert/mod.ts";
+const FILE = 'test.json'
+import { assertEquals } from "@std/assert";
 
 const db = await Deno.openKv(PATH);
 
 
 const file = await Deno.readTextFile(FILE).then(JSON.parse);
+const sampleFn = sampleCollection
+type Sample = ReturnType<typeof sampleFn>
 
 let count = 0
 
@@ -16,8 +18,8 @@ for (const item of file) {
     item.id
   ]
   const entity = await db.get(key)
-  const actual = sampleCollection(item)
-  const expected = sampleCollection(entity.value)
+  const actual: Sample = sampleFn(item)
+  const expected: Sample = sampleFn(entity.value)
   try {
     assertEquals(actual, expected)  
   } catch (error) {
