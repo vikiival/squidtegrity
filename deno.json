@@ -3,7 +3,6 @@
     "start": "deno run -A --unstable main.ts",
     "load": "deno run -A --unstable load.ts"
   },
-  "importMap": "./import_map.json",
   "fmt": {
     "singleQuote": true
   },
@@ -11,5 +10,9 @@
     "rules": {
       "exclude": ["no-explicit-any"]
     }
+  },
+  "imports": {
+    "@/": "./",
+    "@std/assert": "jsr:@std/assert@^1.0.2"
   }
 }
