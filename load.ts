@@ -1,6 +1,6 @@
 const PATH = './db.sqlite'
 const ENTITY = 'collection'
-const FILE = 'col.json'
+const FILE = 'load.json'
 
 const db = await Deno.openKv(PATH);
 
