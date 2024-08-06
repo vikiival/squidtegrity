@@ -3,6 +3,6 @@
 
 
 # MISC
-col.json
-collection.json
+load.json
+test.json
 *.sqlite
