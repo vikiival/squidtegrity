@@ -1,8 +1,9 @@
 {
   "tasks": {
-    "start": "deno run -A --unstable main.ts",
-    "load": "deno run -A --unstable load.ts"
+    "start": "deno run -A main.ts",
+    "load": "deno run -A load.ts"
   },
+  "unstable": ["kv"],
   "fmt": {
     "singleQuote": true
   },
